@@ -18,6 +18,10 @@ function App() {
     setSearchValue(e.target.value);
   };
 
+  const handleDelete = (deleteElem) => {
+    setAddsFood([...foodsSelected].filter((elem) => elem.name !== deleteElem));
+  };
+
   return (
     <div className="App">
       <AddFoodForm handleAddsFood={handleAddsFood} />
@@ -31,7 +35,7 @@ function App() {
             elem.name.toLowerCase().includes(searchValue.toLowerCase())
           )
           .map((elem, i) => {
-            return <FoodBox food={elem} key={i} />;
+            return <FoodBox food={elem} key={i} handleDelete={handleDelete} />;
           })}
       </Row>
     </div>
