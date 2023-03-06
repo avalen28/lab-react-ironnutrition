@@ -2,7 +2,6 @@ import { Card, Col, Button } from 'antd';
 
 // Iteration 2
 function FoodBox({ food }) {
-  console.log(food);
   return (
     <Col>
       <Card title={food.name} style={{ width: 230, height: 300, margin: 10 }}>
